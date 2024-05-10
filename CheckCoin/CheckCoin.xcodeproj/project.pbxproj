@@ -14,6 +14,12 @@
 		C4A2957F2BED07BF00509556 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C4A2957E2BED07BF00509556 /* Base */; };
 		C4A295872BED081D00509556 /* CoinListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A295862BED081D00509556 /* CoinListController.swift */; };
 		C4A295892BED4CF400509556 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A295882BED4CF400509556 /* Coins.swift */; };
+		C4A2958C2BED89DE00509556 /* CoinLogicProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2958B2BED89DE00509556 /* CoinLogicProtocol.swift */; };
+		C4A2958F2BED8B2B00509556 /* CoinLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2958E2BED8B2B00509556 /* CoinLogic.swift */; };
+		C4A295972BED8E6900509556 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C4A295962BED8E6900509556 /* Alamofire */; };
+		C4A295992BED8E6900509556 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = C4A295982BED8E6900509556 /* AlamofireDynamic */; };
+		C4A2959B2BED8EA600509556 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2959A2BED8EA600509556 /* Webservice.swift */; };
+		C4A2959D2BED986A00509556 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2959C2BED986A00509556 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,10 @@
 		C4A295802BED07BF00509556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4A295862BED081D00509556 /* CoinListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListController.swift; sourceTree = "<group>"; };
 		C4A295882BED4CF400509556 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
+		C4A2958B2BED89DE00509556 /* CoinLogicProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogicProtocol.swift; sourceTree = "<group>"; };
+		C4A2958E2BED8B2B00509556 /* CoinLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogic.swift; sourceTree = "<group>"; };
+		C4A2959A2BED8EA600509556 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		C4A2959C2BED986A00509556 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A295972BED8E6900509556 /* Alamofire in Frameworks */,
+				C4A295992BED8E6900509556 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,7 +54,8 @@
 		C4A295662BED07BD00509556 = {
 			isa = PBXGroup;
 			children = (
-				C4A2958A2BED4CFC00509556 /* Models */,
+				C4A2958D2BED8AF500509556 /* Network */,
+				C4A2958A2BED4CFC00509556 /* Model */,
 				C4A295712BED07BD00509556 /* CheckCoin */,
 				C4A295702BED07BD00509556 /* Products */,
 			);
@@ -70,12 +83,23 @@
 			path = CheckCoin;
 			sourceTree = "<group>";
 		};
-		C4A2958A2BED4CFC00509556 /* Models */ = {
+		C4A2958A2BED4CFC00509556 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				C4A295882BED4CF400509556 /* Coins.swift */,
 			);
-			path = Models;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C4A2958D2BED8AF500509556 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C4A2958B2BED89DE00509556 /* CoinLogicProtocol.swift */,
+				C4A2958E2BED8B2B00509556 /* CoinLogic.swift */,
+				C4A2959A2BED8EA600509556 /* Webservice.swift */,
+				C4A2959C2BED986A00509556 /* Router.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +118,10 @@
 			dependencies = (
 			);
 			name = CheckCoin;
+			packageProductDependencies = (
+				C4A295962BED8E6900509556 /* Alamofire */,
+				C4A295982BED8E6900509556 /* AlamofireDynamic */,
+			);
 			productName = CheckCoin;
 			productReference = C4A2956F2BED07BD00509556 /* CheckCoin.app */;
 			productType = "com.apple.product-type.application";
@@ -122,6 +150,9 @@
 				Base,
 			);
 			mainGroup = C4A295662BED07BD00509556;
+			packageReferences = (
+				C4A295952BED8E6900509556 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = C4A295702BED07BD00509556 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -149,10 +180,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A2959D2BED986A00509556 /* Router.swift in Sources */,
 				C4A295732BED07BD00509556 /* AppDelegate.swift in Sources */,
+				C4A2959B2BED8EA600509556 /* Webservice.swift in Sources */,
+				C4A2958C2BED89DE00509556 /* CoinLogicProtocol.swift in Sources */,
 				C4A295752BED07BD00509556 /* SceneDelegate.swift in Sources */,
 				C4A295892BED4CF400509556 /* Coins.swift in Sources */,
 				C4A295872BED081D00509556 /* CoinListController.swift in Sources */,
+				C4A2958F2BED8B2B00509556 /* CoinLogic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +410,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C4A295952BED8E6900509556 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C4A295962BED8E6900509556 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4A295952BED8E6900509556 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		C4A295982BED8E6900509556 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4A295952BED8E6900509556 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C4A295672BED07BD00509556 /* Project object */;
 }

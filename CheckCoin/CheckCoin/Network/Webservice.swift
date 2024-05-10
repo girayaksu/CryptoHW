@@ -20,9 +20,9 @@ final class Webservice {
     func request<T: Decodable>(request: URLRequestConvertible, decodeToType type: T.Type,
         completionHandler: @escaping (Result<T, Error>) -> Void) {
         
-        AF.request(request).responseData { [weak self] response in
-            guard let self else { return }
-            
+        AF.request(request).responseData {  response in
+        //    guard let self else { return }
+          //  [weak self]
             switch response.result {
                 
             case .success(let data):

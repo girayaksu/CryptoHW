@@ -37,10 +37,11 @@ struct Coins: Decodable {
     let change: String?
     let rank: Int?
     let volume: String?
+    let btcPrice: String?
     
     enum CodingKeys: String, CodingKey {
         case uuid, symbol, name, iconUrl, 
-             marketCap, price, change, rank
+             marketCap, price, change, rank, btcPrice
         case volume = "24hVolume"
     }
 }

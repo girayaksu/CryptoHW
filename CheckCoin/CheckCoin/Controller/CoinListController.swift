@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CoinListController: UIViewController {
     
@@ -33,9 +34,7 @@ class CoinListController: UIViewController {
                 print("\(error.localizedDescription)")
             }
         }
-
     }
-    
 }
 
 extension CoinListController: UITableViewDelegate, UITableViewDataSource {
@@ -51,4 +50,20 @@ extension CoinListController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCoin = cryptoCoins[indexPath.row]
+        performSegue(withIdentifier: "goToDetail", sender: selectedCoin)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToDetail" {
+            let detailVC = segue.destination as! DetailViewController
+            let coinToSend = sender as! Coins
+            detailVC.nameD = coinToSend.name ?? ""
+            detailVC.symbolD = coinToSend.symbol ?? ""
+            detailVC.priceD = coinToSend.price ?? ""
+            detailVC.marketCapD = coinToSend.marketCap ?? ""
+            detailVC.btcPriceD = coinToSend.btcPrice ?? ""
+        }
+    }
 }

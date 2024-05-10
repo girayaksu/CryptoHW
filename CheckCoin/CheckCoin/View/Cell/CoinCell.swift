@@ -23,15 +23,29 @@ class CoinCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
     }
     
-    public func configure(withModel model: Coins) {
-        icon.image = UIImage(systemName: "star.fill")
+    func configure(withModel model: Coins) {
         shortName.text = model.symbol
         name.text = model.name
-        price.text = model.price
+        let newSuffix = "png"
+        let url = URL(string: (model.iconUrl?.dropLast(3) ?? "") + newSuffix)
+        icon.kf.setImage(
+            with: url,
+            options: [
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ]) 
+        if let prices = Double(model.price ?? "") {
+            self.price.text = String(format: "%.4f", prices)
+        }
         change.text = model.change
+        if model.change?.first == "-" {
+            change.textColor = .systemRed
+        } else {
+            change.textColor = .systemGreen
+        }
     }
     
 }

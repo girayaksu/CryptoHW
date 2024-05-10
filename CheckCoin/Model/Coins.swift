@@ -7,6 +7,25 @@
 
 import Foundation
 
+struct Crypto: Decodable {
+    
+    let status: String?
+    let data: Data
+    
+}
+
+struct Data: Decodable {
+    let stats: Stats
+    let coins: [Coins]
+}
+
+struct Stats: Decodable {
+    let total: Int?
+    let totalCoins: Int?
+}
+
+
+
 struct Coins: Decodable {
     
     let uuid: String?

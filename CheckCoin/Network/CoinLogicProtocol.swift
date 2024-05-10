@@ -9,5 +9,5 @@ import Foundation
 
 
 protocol CoinLogicProtocol {
-    func getCoinList(completionHandler: @escaping (Result<Coins, Error>) -> Void)
+    func getCoinList(completionHandler: @escaping (Result<Crypto, Error>) -> Void)
 }

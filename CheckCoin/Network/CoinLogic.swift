@@ -14,9 +14,9 @@ final class CoinLogic: CoinLogicProtocol {
         return instance
     }()
     
-    func getCoinList(completionHandler: @escaping (Result<Coins, any Error>) -> Void) {
+    func getCoinList(completionHandler: @escaping (Result<Crypto, any Error>) -> Void) {
         Webservice.shared.request(request: Router.listedCoin,
-            decodeToType: Coins.self, completionHandler: completionHandler)
+            decodeToType: Crypto.self, completionHandler: completionHandler)
     }
     
     
